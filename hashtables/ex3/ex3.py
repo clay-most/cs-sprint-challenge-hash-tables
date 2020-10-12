@@ -4,8 +4,21 @@ def intersection(arrays):
     """
     # Your code here
 
-    return result
+    store = {}
+    # result = []
 
+    for arr in arrays:
+        for num in arr:
+            if num not in store:
+                store[num] = 1
+            else:
+                store[num] += 1
+    result = [num[0] for num in store.items() if num[1] == len(arrays)]
+    # for each in store:
+    #     if store[each] == len(arrays):
+    #         result.append(store[each])
+    #         print(result)
+    return result
 
 if __name__ == "__main__":
     arrays = []
